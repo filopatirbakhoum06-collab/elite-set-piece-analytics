@@ -1,0 +1,115 @@
+# =============================================================================
+# Elite Set-Piece Analytics - .gitignore
+# =============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data files (in root data/ directory only, not src/data/)
+/data/
+*.csv
+*.json
+*.parquet
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+!requirements.txt
+!notebooks/*.json
+
+# Model artifacts (in root models/ directory only, not src/models/)
+/models/
+*.joblib
+*.model
+*.weights
+*.ckpt
+*.pth
+*.pt
+checkpoints/
+
+# Logs
+/logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Documentation builds
+docs/_build/
+site/
+
+# Secrets and credentials
+.env
+.env.*
+*.secret
+secrets/
+credentials/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Large files that shouldn't be tracked
+*.zip
+*.tar.gz
+*.rar
+
+# Cache directories
+.cache/
