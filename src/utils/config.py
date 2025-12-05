@@ -35,7 +35,9 @@ class Config:
     # Project Paths - مسارات المشروع
     # ==========================================================================
     
-    PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+    # Config location: src/utils/config.py
+    # Path structure: project_root/src/utils/config.py
+    PROJECT_ROOT = Path(__file__).parent.parent.parent
     SRC_DIR = PROJECT_ROOT / "src"
     DATA_DIR = PROJECT_ROOT / "data"
     RAW_DATA_DIR = DATA_DIR / "raw"
