@@ -47,8 +47,8 @@ ENV/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Data files
-data/
+# Data files (in root data/ directory only, not src/data/)
+/data/
 *.csv
 *.json
 *.parquet
@@ -59,8 +59,8 @@ data/
 !requirements.txt
 !notebooks/*.json
 
-# Model artifacts
-models/
+# Model artifacts (in root models/ directory only, not src/models/)
+/models/
 *.joblib
 *.model
 *.weights
@@ -70,7 +70,7 @@ models/
 checkpoints/
 
 # Logs
-logs/
+/logs/
 *.log
 
 # OS files
