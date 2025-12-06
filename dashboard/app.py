@@ -474,8 +474,8 @@ def show_designer(df):
         np.random.seed(123)
         
         # Ball position
-        ball_x = st.slider("Ball X Position", 0, 100, 0) / 100 * 105
-        ball_y = st.slider("Ball Y Position", 0, 100, 50) / 100 * 68
+        ball_x = st.slider("Ball X Position", 0, 100, 0) / 100 * PITCH_LENGTH
+        ball_y = st.slider("Ball Y Position", 0, 100, 50) / 100 * PITCH_WIDTH
         
         ax.plot(ball_x, ball_y, 'o', color='white', markersize=15, 
                 markeredgecolor='black', markeredgewidth=2, zorder=10)
@@ -485,7 +485,7 @@ def show_designer(df):
         for i in range(n_att):
             att_x = 70 + np.random.uniform(10, 30)
             att_y = 20 + np.random.uniform(0, 28) + i * 5
-            ax.plot(att_x / 100 * 105, att_y / 100 * 68, 'o', color='red', 
+            ax.plot(att_x / 100 * PITCH_LENGTH, att_y / 100 * PITCH_WIDTH, 'o', color='red', 
                    markersize=12, markeredgecolor='white', markeredgewidth=1)
         
         # Sample defender positions
@@ -493,7 +493,7 @@ def show_designer(df):
         for i in range(n_def):
             def_x = 75 + np.random.uniform(10, 22)
             def_y = 18 + np.random.uniform(0, 32) + i * 4
-            ax.plot(def_x / 100 * 105, def_y / 100 * 68, 's', color='blue', 
+            ax.plot(def_x / 100 * PITCH_LENGTH, def_y / 100 * PITCH_WIDTH, 's', color='blue', 
                    markersize=10, markeredgecolor='white', markeredgewidth=1)
         
         st.pyplot(fig)

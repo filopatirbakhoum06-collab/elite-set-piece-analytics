@@ -261,10 +261,11 @@ def calculate_density_features(row) -> Dict:
     
     # Distance between centroids
     if attackers and defenders:
-        features['centroid_distance'] = np.sqrt(
-            (features['attacker_centroid_x'] - features['defender_centroid_x'])**2 +
-            (features['attacker_centroid_y'] - features['defender_centroid_y'])**2
-        )
+        centroid_diff = np.array([
+            features['attacker_centroid_x'] - features['defender_centroid_x'],
+            features['attacker_centroid_y'] - features['defender_centroid_y']
+        ])
+        features['centroid_distance'] = np.linalg.norm(centroid_diff)
     else:
         features['centroid_distance'] = 0
     

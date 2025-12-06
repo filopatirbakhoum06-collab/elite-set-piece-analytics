@@ -163,15 +163,22 @@ def draw_pitch(
     )
     ax.add_patch(right_arc)
     
-    # Corner arcs
-    for x, y in [(0, 0), (0, width), (length, 0), (length, width)]:
+    # Corner arcs - using dictionary for cleaner code
+    corner_angles = {
+        (0, 0): (0, 90),           # Bottom-left corner
+        (0, width): (90, 180),     # Top-left corner
+        (length, 0): (270, 360),   # Bottom-right corner
+        (length, width): (180, 270) # Top-right corner
+    }
+    
+    for (x, y), (theta1, theta2) in corner_angles.items():
         corner = Arc(
             (x, y),
             2 * CORNER_ARC_RADIUS,
             2 * CORNER_ARC_RADIUS,
             angle=0,
-            theta1=0 if x == 0 and y == 0 else (90 if x == 0 and y == width else (270 if x == length and y == 0 else 180)),
-            theta2=90 if x == 0 and y == 0 else (180 if x == 0 and y == width else (360 if x == length and y == 0 else 270)),
+            theta1=theta1,
+            theta2=theta2,
             color=linecolor,
             linewidth=2
         )
